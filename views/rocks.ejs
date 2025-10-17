@@ -6,11 +6,18 @@
 </head>
 
 <body>
+
     <%- include("partials/nav.ejs") %>
 
-    <img src="<%=randomImage%>" width="400">
+    <h2> <%=rockName%> </h2>
+
+    <%=rockInfo.def%>
+    <br>
+    <p>Link to NASA Site: <a href="<%=rockInfo.link%>">Here</a></p>
+    <img src="<%=rockInfo.image %>" width="300">
 
     <%- include("partials/footer.ejs") %>
+
 </body>
 
 </html>

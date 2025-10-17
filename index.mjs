@@ -12,17 +12,30 @@ app.get('/', async (req, res) => {
    let response = await fetch(url)
    let data = await response.json()
    // console.log(data)
-   let randomImage = data.hits[0].webformatURL
+   // let randomImage = data.hits[0].webformatURL
+   let randomIndex = Math.floor(Math.random() * 50) + 1
+   let randomImage = data.hits[randomIndex].webformatURL
    res.render('home.ejs', {randomImage})
 });
 
 // planet route
 app.get('/planet', (req, res) => {
-   let planet_name = req.query.planetName; // matches the attribute in home.ejs
+   let planet_name = req.query.planetName; // matches the attribute in nav.ejs
    let planetInfo = solarSystem[`get${planet_name}`]();
    //console.log(planetInfo);
    res.render('planetInfo.ejs', {planetInfo, planet_name});
 });
+
+// rocks route
+app.get('/rocks', (req, res) => {
+   let rockName = req.query.rockName; // matches the attribute in nav.ejs
+   let rockInfo = solarSystem[`get${rockName}`]();
+   res.render('rocks.ejs', {rockInfo, rockName});
+});
+
+app.get('/nasapod', (req, res) => {
+   res.render('nasapod.ejs')
+})
 
 // mercury route
 // app.get('/mercury', (req, res) => {
