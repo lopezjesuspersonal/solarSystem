@@ -11,15 +11,21 @@
 
     <h2> <%=planet_name%> </h2>
 
-    <%=planetInfo.description%>
-    <br> <br>
-    Distance from Sun: <%=planetInfo.distanceFromSun%> <br>
-    Year Length: <%=planetInfo.yearLength%> <br>
-    Radius: <%=planetInfo.radius%> <br>
-    Moons: <%=planetInfo.moons%> <br>
-    One Earth Day: <%=planetInfo.oneEarthDay%> <br>
-    <p>Link for more info: <a href="<%=planetInfo.websiteLink%>">Here</a> </p>
-    <img src="<%=planetInfo.image %>" width="300">
+    <div class="column">
+        <div class="colLeft">
+            <%=planetInfo.description%>
+            <br> <br>
+            Distance from Sun: <%=planetInfo.distanceFromSun%> <br>
+            Year Length: <%=planetInfo.yearLength%> <br>
+            Radius: <%=planetInfo.radius%> <br>
+            Moons: <%=planetInfo.moons%> <br>
+            One Earth Day: <%=planetInfo.oneEarthDay%> <br>
+            <p>Link for more info: <a href="<%=planetInfo.websiteLink%>">Here</a> </p>
+        </div>
+        <div class="colRight">
+            <img src="<%=planetInfo.image %>" width="300">
+        </div>
+    </div>
 
     <%- include("partials/footer.ejs") %>
 

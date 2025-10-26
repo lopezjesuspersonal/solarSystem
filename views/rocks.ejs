@@ -11,10 +11,16 @@
 
     <h2> <%=rockName%> </h2>
 
-    <%=rockInfo.def%>
-    <br>
-    <p>Link to NASA Site: <a href="<%=rockInfo.link%>">Here</a></p>
-    <img src="<%=rockInfo.image %>" width="300">
+    <div class="column">
+        <div class="colLeft">
+            <%=rockInfo.def%>
+            <br>
+            <p>Link to NASA Site: <a href="<%=rockInfo.link%>">Here</a></p>
+        </div>
+        <div class="colRight">
+            <img src="<%=rockInfo.image %>" width="300">
+        </div>
+    </div>
 
     <%- include("partials/footer.ejs") %>
 
